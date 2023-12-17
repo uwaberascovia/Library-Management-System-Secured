@@ -32,7 +32,7 @@ public class BookController {
     @PostMapping("/bookSave")
     public String saveBooks(@ModelAttribute("book") Books book, Model model){
         bookService.saveBook(book);
-        return "redirect:/bookPage";
+        return "redirect:/";
 
     }
     @GetMapping("/bookUpdate/{id}")
@@ -50,7 +50,7 @@ public class BookController {
     @GetMapping("/bookDelete/{id}")
     public String deleteBooks(@PathVariable(value = "id")UUID id, Model model){
         this.bookService.deleteBookById(id);
-        return "redirect:/bookPage";
+        return "redirect:/";
     }
     @GetMapping("/pageBook/{pageNo}")
     public String findPageited(@PathVariable(value = "pageNo")int pageNo,
