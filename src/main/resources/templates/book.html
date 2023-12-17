@@ -48,7 +48,23 @@
     /* Other styles remain unchanged */
 </style>
 <body>
-<th:block th:include="navbar"></th:block>
+<header>
+
+        <nav class="set">
+            <ul>
+                <li><a th:href="@{/bookPage}">Book</a></li>
+                <li><a th:href="@{/studentPage}">Student</a></li>
+                <li><a th:href="@{/typePage}">Type</a></li>
+                <li><a th:href="@{/borrowedBook}">Borrow</a></li>
+                <li><a th:href="@{/returnBook}">Return</a></li>
+                <li><a th:href="@{/admin/userInfoPage}">register</a></li>
+                <!-- Other menu items -->
+                <li><a th:href="@{/logout}">Logout</a>
+                </li>
+            </ul>
+        </nav>
+
+</header>
     <h1>List of Books</h1>
 <form th:action="@{/bookSave}" th:object="${book}" method="post">
     <input type="text" id="bookName" th:field="*{bookName}" placeholder="Book Name">
